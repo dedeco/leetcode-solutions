@@ -43,11 +43,15 @@ class Solution:
     def generate(self, n: int, arr: List = [], open=0, close=0):
         if open > n or close > n or close > open:
             return
-        if len(arr) == 2 * n and open == close:
-            self.valid.append(''.join(arr.copy()))
+        if len(arr) == 2*n and open==close:
+            self.valid.append(''.join(arr[:]))
             return
-        self.generate(n, arr + ['('], open + 1, close)
-        self.generate(n, arr + [')'], open, close + 1)
+        arr.append('(')
+        self.generate(n, arr, open +1, close)
+        arr.pop()
+        arr.append(')')
+        self.generate(n, arr, open, close +1 )
+        arr.pop()
 
 
 # driver code
