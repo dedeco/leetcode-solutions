@@ -28,7 +28,9 @@ Both list1 and list2 are sorted in non-decreasing order.
 """
 
 # Definition for singly-linked list.
-from typing import Optional, List
+from typing import Optional
+
+from basic.helpers import create_linked_list
 
 
 class ListNode:
@@ -49,18 +51,6 @@ class Solution:
         else:
             list2.next = self.mergeTwoLists(list1, list2.next)
             return list2
-
-
-def create_linked_list(arr: List[int]) -> Optional[ListNode]:
-    list1 = current = None
-    for i in arr:
-        if not list1:
-            current = ListNode(i)
-            list1 = current
-        else:
-            current.next = ListNode(i)
-            current = current.next
-    return list1
 
 
 # driver code
