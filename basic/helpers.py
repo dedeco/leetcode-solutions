@@ -1,5 +1,7 @@
 from typing import List, Optional
 
+from basic.link_list_node import ListNode
+
 
 def create_linked_list(arr: List[int]) -> Optional[ListNode]:
     list1 = current = None
@@ -11,3 +13,4 @@ def create_linked_list(arr: List[int]) -> Optional[ListNode]:
             current.next = ListNode(i)
             current = current.next
     return list1
+

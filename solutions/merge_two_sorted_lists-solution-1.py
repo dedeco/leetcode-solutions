@@ -31,12 +31,7 @@ Both list1 and list2 are sorted in non-decreasing order.
 from typing import Optional
 
 from basic.helpers import create_linked_list
-
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from basic.link_list_node import ListNode
 
 
 class Solution:
