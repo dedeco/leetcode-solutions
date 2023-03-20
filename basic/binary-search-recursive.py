@@ -3,7 +3,8 @@ from typing import List
 
 def binary_search(arr: List[int], low: int, high: int, x: int):
     if high >= low:
-        mid = low + (high - 1) // 2
+        mid = low + (high - low) // 2
+        print(mid)
         if arr[mid] == x:
             return mid
         elif x > arr[mid]:
@@ -18,5 +19,5 @@ if __name__ == "__main__":
     # driver code
     arr = [1, 5, 7, 10, 15, 110, 130]
     print("The position is {}".format(binary_search(
-        arr, 0, len(arr) - 1, 15
+        arr, 0, len(arr)-1, 130
     )))

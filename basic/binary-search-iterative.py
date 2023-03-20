@@ -3,9 +3,9 @@ from typing import List
 
 def binary_search(arr: List[int], x: int):
     low = 0
-    high = len(arr)-1
+    high = len(arr) - 1
     while high >= low:
-        mid = low + (high -1) // 2
+        mid = low + (high - low) // 2
         if arr[mid] == x:
             return mid
         elif x > arr[mid]:
